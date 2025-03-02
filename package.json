@@ -1,0 +1,26 @@
+{
+    "name": "menu",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/peterggenov/menu.git"
+    },
+    "dependencies": {
+        "react": "19.0.0",
+        "react-dom": "19.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "19.0.9",
+        "@types/react-dom": "19.0.3",
+        "@types/node": "22.13.4",
+        "@vitejs/plugin-react": "4.3.4",
+        "typescript": "5.7.3",
+        "vite": "6.1.0"
+    }
+}

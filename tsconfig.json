@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es2016",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "jsx": "react",
+        "paths": {
+            "components/*": ["./src/components/*"],
+            "logic/*": ["./src/logic/*"],
+            "view/*": ["./src/view/*"]
+        }
+    }
+}
