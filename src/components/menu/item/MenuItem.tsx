@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { MenuItemModel } from 'components/menu/Menu';
 import { MenuPopup } from 'components/menu/item/MenuPopup';
 
-export function MenuItem<T extends MenuItemModel>(props: { direction: 'down' | 'right'; item: T; onSelect?: (item: T) => void }) {
+export function MenuItem<T extends MenuItemModel<T>>(props: { direction: 'down' | 'right'; item: T; onSelect?: (item: T) => void }) {
     const [isOpened, setIsOpened] = useState(false);
     const [itemElement, setItemElement] = useState<HTMLElement | null>(null);
 
@@ -39,7 +39,7 @@ export function MenuItem<T extends MenuItemModel>(props: { direction: 'down' | '
         <div className={clsx('menu-item', isOpened && 'menu-item--active', isDirectedRight && 'menu-item--right', hasItems && 'menu-item--has-sub-items')} ref={setItemElement}>
             <div className="menu-item__name" onClick={_onClick}>{props.item.name}</div>
             {props.item.subItems?.length && <div className={clsx('menu-item__arrow', 'bi', caretIcon)}></div>}
-            {isOpened && props.item.subItems?.length && <MenuPopup items={props.item.subItems} onSelect={props.onSelect}/>}
+            {isOpened && props.item.subItems?.length && <MenuPopup<T> items={props.item.subItems} onSelect={props.onSelect}/>}
         </div>
     );
 }
